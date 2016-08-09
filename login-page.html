@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<div id="container">
+	<head>
+		<link type="text/css" rel="stylesheet" href="stylesheets/login-page.css">
+		<link type="text/css" rel="stylesheet" href="stylesheets/reset.css">
+	</head>
+	<body>
+		<header class="main-login">
+			<img class="login-bg" src="images/bg-dark.jpg" alt="bg-dark"/>
+			<div class="image-gradient"> </div>
+			<button class="trigger">
+
+			</button>
+
+		</header>
+		<section class="wrap">
+
+		</section>
+<div>
+		<script src="js/classie.js"></script>
+		<script>
+			(function() {
+
+				var container = document.getElementById( 'container' ),
+					trigger = container.querySelector( 'button.trigger' );
+
+				function toggleContent() {
+					if( classie.has( container, 'container--open' ) ) {
+						classie.remove( container, 'container--open' );
+						classie.remove( trigger, 'trigger--active' );
+						window.addEventListener( 'scroll', noscroll );
+					}
+					else {
+						classie.add( container, 'container--open' );
+						classie.add( trigger, 'trigger--active' );
+						window.removeEventListener( 'scroll', noscroll );
+					}
+				}
+
+				function noscroll() {
+					window.scrollTo( 0, 0 );
+				}
+
+				// reset scrolling position
+				document.body.scrollTop = document.documentElement.scrollTop = 0;
+
+				// disable scrolling
+				window.addEventListener( 'scroll', noscroll );
+
+				trigger.addEventListener( 'click', toggleContent );
+
+			})();
+		</script>
+	</body>
+</html>
