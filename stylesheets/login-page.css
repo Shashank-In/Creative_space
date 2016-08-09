@@ -1,0 +1,88 @@
+.container{
+	background: #2a2e39;
+}
+.main-login{
+	border: 1px solid black;
+	position: fixed;
+	z-index: 10;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	background: #2a2e39;
+	transition: transform 0.6s;
+	transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+.container--open .main-login {
+	background-image: linear-gradient(#004092, #020202, transparent);
+	transform: translate3d(0, -115%, 0) translate3d(0, 250px, 0);
+}
+
+
+.trigger{
+	position: absolute;
+	border: 1px solid white;
+	width: 120px;
+	height: 50px;
+	background: transparent;
+	margin: 30px 50px;
+	flex: none;
+	bottom: 0px;
+	right: 0px;
+}
+
+
+.login-bg{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 120%;
+	opacity: 1;
+	transition:  0.6s;
+	transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+.container--open .login-bg {
+	transform: translate3d(0, 20%, 0);
+}
+
+.image-gradient{
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	height: 150px;
+	opacity: 0;
+	background: linear-gradient(0deg,black,rgba(0,0,0,0));
+	transition: opacity 0.6s;
+	transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+.container--open .image-gradient{
+	opacity: 1;
+}
+.wrap {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 250px 5px 0;
+
+}
+wrap::after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	
+	background: #2a2e39;
+	content: '';
+	opacity: 1;
+	transition: opacity 0.6s;
+	transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+	pointer-events: none;
+}
+
+.content{
+	height: 700px;
+	width: 100%;
+	background: #2a2e39; 
+}
