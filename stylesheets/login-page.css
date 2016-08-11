@@ -337,19 +337,23 @@ wrap::after{
 	font-size: 20px;
 	font-family: SFNSUL;
 	color: rgba(255,255,255,0.4);
+	text-align: center;
 }
 
 :-moz-placeholder { /* Firefox 18- */
 	font-family: SFNSUL;
 	color: rgba(255,255,255,0.4);
+	text-align: center;
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
 	font-family: SFNSUL;
 	color: rgba(255,255,255,0.4);
+	text-align: center;
 }
 
 :-ms-input-placeholder {
 	font-family: SFNSUL;
 	color: rgba(255,255,255,0.4);
+	text-align: center;
 }
