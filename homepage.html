@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome to your Creative Space</title>
+		<link type="text/css" rel="stylesheet" href="stylesheets/homepage.css">
+		<link type="text/css" rel="stylesheet" href="stylesheets/reset.css">
+		<script src="js/modernizr-2.6.2.min.js"></script>
+		<script src="js/modernizr.custom.js"></script>
+</head>
+<body>
+	<div class="user-detail">
+		<div class="profile-picture"><img id="profile-picture" src="images/profile-picture.jpg"></div>
+	</div>
+	<div class="container">
+			<button class="add-button" id="add-button">+</button>
+			<div class="cn-wrapper" id="cn-wrapper">
+				    <ul>
+				      <li><a href="#"><span class="icon-picture"></span></a></li>
+				      <li><a href="#"><span class="icon-headphones"></span></a></li>
+				      <li><a href="#"><span class="icon-home"></span></a></li>
+				      <li><a href="#"><span class="icon-facetime-video"></span></a></li>
+				     </ul>	
+			</div>
+		<div id="cn-overlay" class="cn-overlay"></div>`
+		<ul id="og-grid" class="og-grid">
+					<li>
+						<a href="#" data-largesrc="images/card-1.jpg" data-title="Celebrate Asthetics" data-description="Swiss chard pumpkin bunya nuts maize.">
+							<img src="images/card-1.jpg" alt="img01"/>
+						</a>
+					</li>
+					<li>
+						<a href="#" data-largesrc="images/card-2.jpg" data-title="Veggies sunt bona vobis" data-description="Komatsuna prairie turnip wattle seed artichoke mustard horseradish taro rutabaga ricebean carrot black-eyed pea turnip greens beetroot yarrow watercress kombu.">
+							<img src="images/card-2.jpg" alt="img02"/>
+						</a>
+					</li>
+					<li>
+						<a href="#" data-largesrc="images/card-3.jpg" data-title="Veggies sunt bona vobis" data-description="Komatsuna prairie turnip wattle seed artichoke mustard horseradish taro rutabaga ricebean carrot black-eyed pea turnip greens beetroot yarrow watercress kombu.">
+							<img src="images/card-3.jpg" alt="img02"/>
+						</a>
+					</li>
+					<li>
+						<a href="#" data-largesrc="images/card-4.jpg" data-title="Veggies sunt bona vobis" data-description="Komatsuna prairie turnip wattle seed artichoke mustard horseradish taro rutabaga ricebean carrot black-eyed pea turnip greens beetroot yarrow watercress kombu.">
+							<img src="images/card-4.jpg" alt="img02"/>
+						</a>
+					</li>
+					<li>
+						<a href="#" data-largesrc="images/card-5.jpg" data-title="Veggies sunt bona vobis" data-description="Komatsuna prairie turnip wattle seed artichoke mustard horseradish taro rutabaga ricebean carrot black-eyed pea turnip greens beetroot yarrow watercress kombu.">
+							<img src="images/card-5.jpg" alt="img02"/>
+						</a>
+					</li>					
+		</ul>
+
+
+	<!--<div class="card"><img class ="card-img" src="images/card-1.jpg"></div>
+		<div class="card"><img class ="card-img" src="images/card-2.jpg"></div>
+		<div class="card"><img class ="card-img" src="images/card-3.jpg"></div>
+		<div class="card"><img class ="card-img" src="images/card-4.jpg"></div>
+		<div class="card"><img class ="card-img" src="images/card-5.jpg"></div>
+		<div class="card"><img class ="card-img" src="images/card-6.jpg"></div> -->	
+	</div>
+	<script src="js/classie.js"></script>
+	<script src="js/polyfills.js"></script>
+	<script src="js/jquery-1.9.1.js"></script>
+	<script src="js/grid.js"></script>
+	<script>
+
+		$(function() {
+			Grid.init();
+		});
+	
+	(function(){
+
+	 var button = document.getElementById('add-button'),
+    wrapper = document.getElementById('cn-wrapper'),
+    overlay = document.getElementById('cn-overlay');
+
+	//open and close menu when the button is clicked
+	var open = false;
+	button.addEventListener('click', handler, false);
+	wrapper.addEventListener('click', cnhandle, false);
+
+	function cnhandle(e){
+		e.stopPropagation();
+	}
+
+	function handler(e){
+		if (!e) var e = window.event;
+	 	e.stopPropagation();//so that it doesn't trigger click event on document
+
+	  	if(!open){
+	    	openNav();
+	  	}
+	 	else{
+	    	closeNav();
+	  	}
+	}
+	function openNav(){
+		open = true;
+	    button.innerHTML = "-";
+	    classie.add(overlay, 'on-overlay');
+	    classie.add(wrapper, 'opened-nav');
+	}
+	function closeNav(){
+		open = false;
+		button.innerHTML = "+";
+		classie.remove(overlay, 'on-overlay');
+		classie.remove(wrapper, 'opened-nav');
+	}
+	document.addEventListener('click', closeNav); 
+
+
+
+})();
+
+
+
+
+	</script>
+</body>
+</html>

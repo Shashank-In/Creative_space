@@ -15,13 +15,13 @@
 	width: 100%;
 	height: 100%;
 	background: black;
-	transition: transform 0.3s;
+	transition: transform 0.6s;
 	transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
 }
 
 .container--open .main-login{
 	background-image: linear-gradient(#004092, #020202, transparent);
-	transform: translate3d(0, -100%, 0) translate3d(0, 200px, 0);
+	transform: translate3d(0, -100%, 0) translate3d(0, 250px, 0);
 }
 
 .login{
@@ -46,12 +46,12 @@
 
 
 .morph-continue .title{
-	top: -260px;
+	transform:translateY(-260px);
 	font-size: 130px;
 }
 
 .morph-begin .title{
-	top: -260px;
+	transform:translateY(-260px);
 	font-size: 130px;
 }
 
@@ -82,14 +82,13 @@
 	color: transparent;
 	height:350px;
 	width: 750px;
-	transform: translate(0,0);
-	top: -250px;
+	transform: translate(0,-250px);
 	border: -10px solid white;
 	background-color: rgba(0,0,0,0.6);
 }
 
 .morph-continue #login-desc{
-	color: rgba(255,255,255,0.4);
+	color: rgba(255,255,255,0.6);
 	font-size: 30px;
 }
 .morph-begin #signup-desc{
@@ -109,6 +108,7 @@ opacity: 0;
 	margin: 0 auto;
 	padding: 0;
 }
+
 .login-details{
 	top:-170px;
 	padding: -3px 0;
@@ -123,10 +123,13 @@ opacity: 0;
 .morph-continue .login-details{
 	visibility: visible;
 	opacity: 1;
-
-}
+`}
 
 .login-details input{
+	padding-left:8px;
+	font-size:30px;
+	font-family: SFNSUL;
+	color: white;
 	margin: 10px;
 	background-color: transparent;
 	height: 50px;
@@ -170,8 +173,7 @@ opacity: 0;
 	color: transparent;
 	height: 425px;
 	width: 750px;
-	transform: translate(0,0);
-	top: -350px;
+	transform: translate(0,-350px);
 	background-color: rgba(0,0,0,0.6);
 }
 
@@ -205,7 +207,11 @@ opacity: 0;
 }
 
 .signup-details input{
+	padding-top: 2px;
 	margin: 10px;
+	font-size:28px;
+	font-family: SFNSUL;
+	color: white;
 	background-color: transparent;
 	height: 50px;
 	width: 500px;
@@ -272,24 +278,24 @@ opacity: 0;
 .login-bg{
 	position: absolute;
 	bottom: 0;
-	width: 1920px;
-	height: 1100px;
+	width: 100%;
+	height: 100%;
 	opacity: 1;
-	transition:  0.3s;
+	transition: 0.6s;
 	transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
 }
 
 
 .container--open .login-bg{
-	transform: translate3d(0, 35%, 0);
+	transform: translate3d(0,15%,0);
 }
 
 
 .image-gradient{
 	position: absolute;
-	bottom: 0px;
+	bottom: -1px;
 	width: 100%;
-	height: 200px;
+	height: 400px;
 	opacity: 0;
 	background: linear-gradient(0deg,black,rgba(0,0,0,0));
 	transition: opacity 0.6s;
@@ -303,11 +309,12 @@ opacity: 0;
 .wrap{
 	position: relative;
 	display: flex;
+	background: black;
 	flex-wrap: wrap;
 	padding: 250px 5px 0;
 }
 
-wrap::after{
+.wrap::after{
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -321,23 +328,86 @@ wrap::after{
 }
 
 .morph-off{ 
-	border: 1px solid white;
-	background-color: white;
-	width:100%;
+	outline: none;
+	position: fixed;
+	border: transparent;
+	background-color: transparent;
+	width:150%;
 	height:100%;
+	top:10px;
+	right: 10px;
 }
 
-.content{
-	height: 700px;
-	width: 100%;
-	background: #2a2e39; }
+.card{
+	position: relative;
+	overflow: hidden;
+	height: 25vw;
+	flex: 1 0 25%;
+	outline: none;
+	border: 10px solid black;
+	border-width: 0 5px 10px;
+}
 
+.card-img{
+	position: absolute;
+	top: 50%;
+	min-height: 100%;
+	width: 100%;
+	transition: 0.3s;
+	opacity: .3;
+	transform: translate3d(0,-50%,0) scale3d(1.1,1.1,1);
+	transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+}
+.card-img:hover{
+	opacity: 1;
+	position: relative;
+	transform: translate3d(0,-50%,0);
+}
+.card-title{
+	width: 100%;
+	margin: 30px 30px;
+	position: absolute;
+	bottom: 10px;
+	line-height: 1;
+	font-size:50px;
+	font-family: SFNSUL;
+	color: #dbdbdb;
+}
+
+/* Media Queries */
+@media screen and (max-width: 1440px) {
+	.card {
+		height: 30vw;	
+		-webkit-flex: 1 0 33.333%;
+		flex: 1 0 33.333%;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.card {
+		height: 45vw;
+		-webkit-flex: 1 0 50%;
+		flex: 1 0 50%;
+		font-size: 0.85em;
+	}
+}
+
+@media screen and (max-width: 590px) {
+	.card {
+		height: 90vw;
+		-webkit-flex: 1 0 100%;
+		flex: 1 0 100%;
+	}
+}
 
 ::-webkit-input-placeholder {
-	font-size: 20px;
+	padding-left: 10px;
+	padding-top: 10px;
+	vertical-align: middle;
+	font-size: 30px;
 	font-family: SFNSUL;
-	color: rgba(255,255,255,0.4);
-	text-align: center;
+	color: rgba(255,255,255,0.8);
+	text-align: left;
 }
 
 :-moz-placeholder { /* Firefox 18- */
