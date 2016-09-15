@@ -1,3 +1,7 @@
+@font-face{
+	font-family: Avenir;
+	src: url(../fonts/avenir-next-regular.ttf);
+}
 *{
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -23,26 +27,63 @@ body{
 	height: 100%;
 	width:100%;
 }
+.user-detail div:nth-child(1){
+	margin-top: 40px;
+	margin-left: 8%;
+	margin-right: 8%;
+}
 .user-detail{
-	position: fixed;	
+	position: fixed;
 	right: 0;
-	width: 17em;
+	width: 20%;
 	height: 100%;
-	border-left: 2px solid white;
+	border-left: 1px solid white;
 	background-color: black;
 	z-index: 11;
 }
+.user-detail p{
+	font-family: Avenir;
+	color: white;
+}
+#user-name{
+	font-size: 2em;
+}
+#user-bio{
+	font-size: 1.2em;
+	margin-top: 30px;
+}
 .profile-picture{
-	position: relative;
+	margin-top: 30px;
 	border: 1px solid white;
-	height: 15em;
-	width: 15em;
-	top: 5em;
-	margin: auto;
+	height: 16.5vw;
+	width: 16.5vw;
 	overflow: hidden;
 }
 #profile-picture{
-	height: 100%;	
+	height: 100%;
+}
+#social-icons{
+	margin-top: 30px;
+}
+#social-icons img{
+	margin-top: 8px;
+	margin-right: 8px;
+	height: 3vw;
+}
+#user-tools{
+	position: absolute;
+	width: 16.5vw;
+	margin-left: 8%;
+	margin-right: 8%;
+	margin-bottom: 30px;
+	bottom: 0;
+}
+#user-tools img{
+	position: relative;
+	height: 2vw;
+}
+#user-tools img:nth-child(2){
+	float: right;
 }
 
 
@@ -67,6 +108,23 @@ body{
   -moz-transition: all .3s ease;
   transition: all .3s ease;
 }
+.image-icon img{
+	height: 45px;
+	transform: rotate(67.5deg);
+}
+.video-icon img{
+	height: 45px;
+	transform: rotate(22.5deg);
+
+}
+.audio-icon img{
+	height: 45px;
+	transform: rotate(-22.5deg);
+}
+.text-icon img{
+	height: 45px;
+	transform: rotate(-67.5deg);
+}
 
 .csstransforms .opened-nav {
   border-radius: 50%;
@@ -80,7 +138,7 @@ body{
 .cn-overlay {
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.6);
+  background-color: rgba(0,0,0,0.8);
   position: fixed;
   top: 0;
   left: 0;
@@ -131,7 +189,6 @@ body{
   font-size: 1.5em;
   width: 10em;
   height: 10em;
-  border: 1px solid white;
   -webkit-transform-origin: 100% 100%;
   -moz-transform-origin: 100% 100%;
   -ms-transform-origin: 100% 100%;
@@ -221,7 +278,7 @@ body{
 .csstransforms .cn-wrapper li:not(.active) a:hover,
 .csstransforms .cn-wrapper li:not(.active) a:active,
 .csstransforms .cn-wrapper li:not(.active) a:focus {
-background-color: #1a1a1a;
+background-color: rgba(26,26,26,.5);
 }
 .csstransforms .cn-wrapper li:not(.active) a:focus
 {
@@ -290,7 +347,7 @@ background-color: #1a1a1a;
 .og-grid {
 	position: static;
 	list-style: none;
-	padding: 20px 0;
+	padding: 20px;
 	margin: 0 auto;
 	text-align: center;
 	width: 100%;
@@ -342,7 +399,7 @@ background-color: #1a1a1a;
 
 .og-expander-inner {
 	position: static;
-	padding: 50px 30px;
+	padding: 60px 60px;
 	height: 100%;
 }
 
@@ -375,19 +432,19 @@ background-color: #1a1a1a;
 	background: #333;
 }
 
-.og-fullimg,
-.og-details {
-	width: 50%;
-	float: left;
-	height: 100%;
+.og-fullimg {
+	display: inline-block;
+	margin-right: 20px;
+	width: 35vw;
 	overflow: hidden;
 	position: relative;
 }
-
 .og-details {
-	padding: 0 40px 0 20px;
+	display: inline-block;
+	margin-left: 20px;
+	width: 35vw;
+	position: absolute;
 }
-
 .og-fullimg {
 	text-align: center;
 }
@@ -397,35 +454,22 @@ background-color: #1a1a1a;
 	max-height: 100%;
 	max-width: 100%;
 }
-
-
-.og-details {
-	padding: 0 40px 0 20px;
-}
-
-.og-fullimg {
-	text-align: center;
-}
-
 .og-fullimg img {
-	display: inline-block;
 	max-height: 100%;
 	max-width: 100%;
 }
-
-
 .og-details h3 {
-	font-weight: 300;
+	font-family: Avenir;
+	margin-bottom: 20px;
 	font-size: 52px;
-	padding: 40px 0 10px;
-	margin-bottom: 10px;
 }
 
 .og-details p {
+	font-family: Avenir;
 	font-weight: 400;
 	font-size: 16px;
 	line-height: 22px;
-	color: #999;
+	color: #888;
 }
 
 .og-details a {
