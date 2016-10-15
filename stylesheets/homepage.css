@@ -22,6 +22,8 @@ body{
 	background-color: #1a1a1a;
 }
 
+/* The user detail column */
+
 .container{
 	position: relative;
 	height: 100%;
@@ -86,7 +88,7 @@ body{
 	float: right;
 }
 
-
+/* The semi-circular upload button */
 .csstransforms .cn-wrapper{
   font-size: 1em;
   width: 26em;
@@ -285,62 +287,6 @@ background-color: rgba(26,26,26,.5);
     position:fixed;
 }
 
-/*
-
-.card{
-	user-select:none;
-	display: inline-block;
-	position: relative;
-	overflow: hidden;
-	outline: none;
-	border: 5px solid #1a1a1a;
-	border-width: 0 2px 4px;
-}
-
-.card-img{
-	-webkit-user-drag:none;
-	-webkit-user-select:none;
-	user-drag:none;
-	user-select:none;
-	position: relative;
-	top: 50%;
-	height: 100%;
-	transition: 0.3s;
-	opacity: 1;
-	transform: translate3d(0,-50%,0) scale3d(1.1,1.1,1);
-	transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
-}
-.card-img:hover{
-	opacity: .8;
-}
-
-@media screen and (max-width: 1440px) {
-	.card {
-		height: 15em;
-		width: 15em;	
-		-webkit-flex: 1 0 33.333%;
-		flex: 1 0 33.333%;
-	}
-}
-
-@media screen and (max-width: 1000px) {
-	.card {
-		height: 12em;
-		width: 12em;
-		-webkit-flex: 1 0 50%;
-		flex: 1 0 50%;
-		font-size: 0.85em;
-	}
-}
-
-@media screen and (max-width: 590px) {
-	.card {
-		height: 90vw;
-		-webkit-flex: 1 0 100%;
-		flex: 1 0 100%;
-	}
-}
-*/
 
 /*expansion of cards */
 
@@ -511,3 +457,322 @@ background-color: rgba(26,26,26,.5);
   z-index: 2;
 }
 
+/* Catogarized modals*/
+
+.md-modal {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 50%;
+	max-width: 630px;
+	min-width: 320px;
+	height: auto;
+	z-index: 2000;
+	visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	-moz-transform: translateX(-50%) translateY(-50%);
+	-ms-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+}
+
+.md-show {
+	visibility: visible;
+}
+
+.md-overlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	visibility: hidden;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	opacity: 0;
+  	background-color: rgba(0,0,0,0.7);
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.md-show ~ .md-overlay {
+	opacity: 1;
+	visibility: visible;
+}
+
+/* Content styles */
+.md-content {
+	color: #fff;
+	background:#1a1a1a;
+	position: relative;
+	border-radius: 5px;
+	margin: 0 auto;
+}
+
+.md-content h3 {
+	margin: 0;
+	padding: 0.4em;
+	text-align: center;
+	font-size: 2em;
+	font-weight: 100;
+	font-family: Avenir;
+	opacity: 0.8;
+	background: rgba(0,0,0,0.1);
+	border-radius: 3px 3px 0 0;
+}
+
+.md-content > .form-cont {
+	padding: 15px 40px 30px;
+	font-weight: 300;
+	font-size: 1.15em;
+}	
+
+
+
+
+.md-effect .md-content {
+	-webkit-transform: translateY(20%);
+	-moz-transform: translateY(20%);
+	-ms-transform: translateY(20%);
+	transform: translateY(20%);
+	opacity: 0;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.md-show.md-effect .md-content {
+	-webkit-transform: translateY(0);
+	-moz-transform: translateY(0);
+	-ms-transform: translateY(0);
+	transform: translateY(0);
+	opacity: 1;
+}
+
+.md-close {
+	position: absolute;
+	right: 0;
+	top: 0;
+	overflow: hidden;
+	margin: 15px;
+	width: 30px;
+	height: 30px;
+	outline: none;
+	border: none;
+	background: none;
+	flex: none;
+}
+.icon line {
+	stroke: #dbdbdb;
+	fill: none;
+	stroke-width: 2px;
+}
+
+.icon {
+	transition: opacity 0.3s, transform 0.3s;
+	transform-origin: 50% 50%;
+}
+
+.md-close:hover{
+	opacity: 0.3;
+}
+
+
+/* Image Form*/
+
+input,textarea{
+	padding-left:8px;
+	font-family: Avenir;
+	color: white;
+	background-color: transparent;
+	border: 1px solid white;
+}
+
+.form-button{
+	position: relative;
+	opacity: 1;
+	display: block;
+	font-size: 20px;
+	line-height: 50px;
+	color: white;
+	font-family: Avenir;
+	text-align: center;
+	border: 1px solid white;
+	width: 100px;
+	height: 50px;
+	background: transparent;
+	margin: 5px auto;
+}
+
+#image-title{
+	margin: 10px auto;
+	padding: 10px;
+	font-family: Avenir;
+	font-size: 1.2em;
+	height: 35px;
+	width: 100%;
+}
+
+#image-desc{
+	margin: 10px auto;	
+	padding: 10px;
+	font-family: Avenir;
+	font-size: 1em;
+	height: 150px;
+	width: 100%;
+	resize: none;
+}
+
+/* video form */
+.vid-th-cont{
+	display: inline-block;
+	border: 1px solid white;
+	height: 200px;
+	width: 200px;
+	overflow: hidden;
+}
+#vid-thumb{
+	width: 100%;
+}
+#video-title{
+	float: right;
+	padding: 10px;
+	font-family: Avenir;
+	font-size: 1.2em;
+	height: 35px;
+	width: 60%;
+}
+
+#video-desc{
+	position: absolute;
+	right: 0;
+	display: block;
+	padding: 10px;
+	font-family: Avenir;
+	font-size: 1em;
+	height: 150px;
+	width: 60%;
+	resize: none;
+	transform: translateY(-153px);
+}
+
+/* music form */
+.aud-th-cont{
+	display: inline-block;
+	border: 1px solid white;
+	height: 200px;
+	width: 200px;
+	overflow: hidden;
+}
+#thumb{
+	width: 100%;
+}
+#audio-title{
+	float: right;
+	padding: 10px;
+	font-family: Avenir;
+	font-size: 1.2em;
+	height: 35px;
+	width: 60%;
+}
+
+#audio-desc{
+	position: absolute;
+	right: 0;
+	display: block;
+	padding: 10px;
+	font-family: Avenir;
+	font-size: 1em;
+	height: 150px;
+	width: 60%;
+	resize: none;
+	transform: translateY(-153px);
+}
+
+/*text form*/ 
+
+#text-title{
+	margin: 10px auto;
+	padding: 10px;
+	font-family: Avenir;
+	font-size: 1.2em;
+	height: 35px;
+	width: 100%;
+}
+
+#text-desc{
+	margin: 10px auto;	
+	padding: 10px;
+	font-family: Avenir;
+	font-size: 1em;
+	height: 300px;
+	width: 100%;
+	resize: none;
+}
+
+/*upload label*/
+
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.inputfile + label {
+	position: relative;
+	margin: 0 auto;
+    max-width: 80%;
+    font-size: 1.25rem;
+    /* 20px */
+    text-align: center;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    display: block;
+    overflow: hidden;
+    padding: 0.625rem 1.25rem;
+    /* 10px 20px */
+}
+
+.no-js .inputfile + label {
+    display: none;
+}
+
+.inputfile:focus + label,
+.inputfile.has-focus + label {
+    outline: 1px dotted #000;
+    outline: -webkit-focus-ring-color auto 5px;
+}
+
+.inputfile + label * {
+    /* pointer-events: none; */
+    /* in case of FastClick lib use */
+}
+
+.inputfile + label svg {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    fill: currentColor;
+    margin-top: -0.25em;
+    /* 4px */
+    margin-right: 0.25em;
+    /* 4px */
+}
+
+.inputfile + label {
+    color: #fff;
+    opacity: 0.8;
+}
+
+.inputfile:focus + label,
+.inputfile.has-focus + label,
+.inputfile + label:hover {
+   opacity: 0.5;
+}
