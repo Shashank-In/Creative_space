@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link type="text/css" rel="stylesheet" href="stylesheets/login-page.css">
+		<link type="text/css" rel="stylesheet" href="stylesheets/reset.css">
+	</head>
+	<body>
+	<div id="container">
+		<header class="main-login">
+			<img class="login-bg" src="images/bg-dark.jpg" alt="bg-dark"/>
+			<div class="image-gradient"></div>
+
+				<div class="login">
+					<p class="title">creative space</p>
+						<button class="morph-off"></button>
+						<button class="continue">continue
+							<div class="login-form">
+								<form class="login-details" method="post"action="/login">
+									<p id="login-desc">Just one more step to your creative space.</p>
+									<input type="text" name="email" placeholder="Email">
+									<input type="password" name="password" placeholder="Password"><br>
+									<input type="submit" name="submit" value="Login" id="login-button">
+								</form>
+							</div>
+						</button>
+						<button class="begin">begin
+							<div class="signup-form">
+								<form class="signup-details" method="post" action="/signup">
+									<p id="signup-desc">Your first time? Enter the required details.</p>
+									<input type="text" name="first-name" id="first-name" placeholder="First Name"><input type="text" name="last-name" id="last-name" placeholder="Last Name"><br>
+									<input type="text" name="email" placeholder="Email">
+									<input type="password" name="password" id="password" placeholder="Password"><input type="password" name="confirm-password" id="confirm-password" placeholder="Confirm Password"><br>
+									<input type="submit" name="submit" value="Sign Up" id="signup-button">
+								</form>
+							</div>
+						</button>
+				</div>
+
+			<button class="trigger"></button>
+		</header>
+		<section class="wrap">
+				<div class="card"><img class ="card-img" src="images/card-1.jpg"><h2 class="card-title">Celebrate Aesthetic</h2></div>
+				<div class="card"><img class ="card-img" src="images/card-2.jpg"><h2 class="card-title">Explore</h2></div>
+				<div class="card"><img class ="card-img" src="images/card-3.jpg"><h2 class="card-title">Keep</h2></div>
+				<div class="card"><img class ="card-img" src="images/card-4.jpg"></div>
+				<div class="card"><img class ="card-img" src="images/card-5.jpg"></div>
+				<div class="card"><img class ="card-img" src="images/card-6.jpg"></div>
+		</section>
+	</div>
+		<script src="javascripts/classie.js"></script>
+		<script src="javascripts/modernizr-2.6.2.min.js"></script>
+		<script>
+			(function() {
+
+				var container = document.getElementById( 'container'),
+					cont = container.querySelector( 'button.continue'),
+					moff=container.querySelector( 'button.morph-off');
+
+				function ContinueOn() {
+						classie.add( container , 'morph-continue' );
+				}
+
+				function ContinueOff() {
+					if( classie.has( container, 'morph-continue' ) ) {
+						classie.remove( container, 'morph-continue' );
+					}
+				}
+				var container = document.getElementById( 'container'),
+					beg = container.querySelector( 'button.begin');
+
+				function BeginOn() {
+						classie.add( container , 'morph-begin' );
+				}
+
+				function BeginOff() {
+					if( classie.has( container, 'morph-begin' ) ) {
+						classie.remove( container, 'morph-begin' );
+					}
+				}
+
+
+
+				var container = document.getElementById( 'container' ),
+					trigger = container.querySelector( 'button.trigger' );
+
+				function toggleContent() {
+					if( classie.has( container, 'container--open' ) ) {
+						classie.remove( container, 'container--open' );
+						classie.remove( trigger, 'trigger--active' );
+						window.addEventListener( 'scroll', noscroll );
+					}
+					else {
+						classie.add( container, 'container--open' );
+						classie.add( trigger, 'trigger--active' );
+						window.removeEventListener( 'scroll', noscroll );
+					}
+				}
+
+				function noscroll() {
+					window.scrollTo( 0, 0 );
+				}
+
+				// reset scrolling position
+				document.body.scrollTop = document.documentElement.scrollTop = 0;
+
+				// disable scrolling
+				window.addEventListener( 'scroll', noscroll );
+
+				trigger.addEventListener( 'click', toggleContent );
+				cont.addEventListener( 'click', ContinueOn );
+				beg.addEventListener( 'click', BeginOn );
+				moff.addEventListener( 'click', ContinueOff );
+				moff.addEventListener( 'click', BeginOff );
+
+			})();
+		</script>
+	</body>
+</html>
