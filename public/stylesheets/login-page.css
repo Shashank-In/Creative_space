@@ -1,6 +1,6 @@
 @font-face{
-	font-family: SFNSUL;
-	src: url(../fonts/SFNSDisplay-Ultralight.otf);
+	font-family: Avenir Light;
+	src: url(../fonts/avenir-next-lt.ttf);
 }
 
 .container{
@@ -17,10 +17,10 @@
 	background: black;
 	transition: transform 0.6s;
 	transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+	border-bottom: 1px solid #00a99d;
 }
 
 .container--open .main-login{
-	background-image: linear-gradient(#004092, #020202, transparent);
 	transform: translate3d(0, -100%, 0) translate3d(0, 250px, 0);
 }
 
@@ -37,7 +37,7 @@
 	margin: auto;
 	font-size: 150px;
 	color: white;
-	font-family: SFNSUL;
+	font-family: Avenir Light;
 	transition:  0.3s;
 	transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
 	-webkit-transition:0.3s;
@@ -62,7 +62,7 @@
 	font-size: 35px;
 	line-height: 50px;
 	color: white;
-	font-family: SFNSUL;
+	font-family: Avenir Light;
 	text-align: center;
 	border: 1px solid white;
 	width: 190px;
@@ -73,26 +73,28 @@
 	transition:  0.3s;
 	transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
 	overflow: hidden;
+	cursor: pointer;
 }
 .continue:hover{
-	background-color: rgba(0,0,0,0.6);
+	background-color: rgba(255,255,255,0.2);
 }
 
-.morph-continue .continue {
+.morph-continue .continue{
 	color: transparent;
 	height:350px;
 	width: 750px;
 	transform: translate(0,-250px);
 	border: -10px solid white;
 	background-color: rgba(0,0,0,0.6);
+	cursor: default;
 }
 
 .morph-continue #login-desc{
-	color: rgba(255,255,255,0.6);
+	color: #00a99d;;
 	font-size: 30px;
 }
 .morph-begin #signup-desc{
-	color: rgba(255,255,255,0.4);
+	color: #00a99d;
 	font-size: 30px;
 }
 
@@ -126,9 +128,10 @@ opacity: 0;
 `}
 
 .login-details input{
-	padding-left:8px;
-	font-size:30px;
-	font-family: SFNSUL;
+	padding-top: 2px;
+	padding-left: 8px;
+	font-size: 25px;
+	font-family: Avenir Light;
 	color: white;
 	margin: 10px;
 	background-color: transparent;
@@ -137,15 +140,16 @@ opacity: 0;
 	border: 1px solid white;
 }
 #login-button{
-	font-family: SFNSUL;
+	font-family: Avenir Light;
 	font-size: 30px;
 	color: white;
 	height: 60px;
 	width: 140px;
-	transform: translateX(182px);
+	transform: translateX(185px);
+	cursor: pointer;
 }
 #login-button:hover{
-	background-color: rgba(255,255,255,0.1);
+	background-color: rgba(255,255,255,0.2);
 }
 .begin{
 	position: relative;
@@ -153,7 +157,7 @@ opacity: 0;
 	font-size: 35px;
 	line-height: 50px;
 	color: white;
-	font-family: SFNSUL;
+	font-family: Avenir Light;
 	border: 1px solid white;
 	width: 170px;
 	height: 80px;
@@ -164,9 +168,10 @@ opacity: 0;
 	transition:  0.3s;
 	transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
 	overflow: hidden;
+	cursor: pointer;
 }
 .begin:hover{
-	background-color: rgba(0,0,0,0.6);
+	background-color: rgba(255,255,255,0.2);
 }
 
 .morph-begin .begin{
@@ -175,6 +180,7 @@ opacity: 0;
 	width: 750px;
 	transform: translate(0,-350px);
 	background-color: rgba(0,0,0,0.6);
+	cursor: default;
 }
 
 .morph-continue .begin{
@@ -207,14 +213,15 @@ opacity: 0;
 }
 
 .signup-details input{
+	padding-left:8px;
 	padding-top: 2px;
 	margin: 10px;
-	font-size:28px;
-	font-family: SFNSUL;
+	font-size: 25px;
+	font-family: Avenir Light;
 	color: white;
 	background-color: transparent;
 	height: 50px;
-	width: 500px;
+	width: 510px;
 	border: 1px solid white;
 }
 
@@ -249,20 +256,23 @@ opacity: 0;
 
 
 #signup-button{
-	font-family: SFNSUL;
+	font-family: Avenir Light;
 	font-size: 30px;
 	color: white;
 	height: 60px;
 	width: 140px;
-	transform: translateX(182px);
+	transform: translateX(190px);
+	cursor: pointer;
 }
 #signup-button:hover{
-	background-color: rgba(255,255,255,0.1);
+	background-color: rgba(255,255,255,0.2);
 }
 
 .trigger{
+	font-size: 20px;
+	color: white;
 	position: absolute;
-	border: 0.5px solid white;
+	border: 0px solid white;
 	width: 100px;
 	height: 50px;
 	background: transparent;
@@ -270,9 +280,13 @@ opacity: 0;
 	flex: none;
 	bottom: 0px;
 	right: 0px;
+	cursor: pointer;
+	transition: 0.6s;
+
 }
 .trigger:hover{
-	background-color: rgba(0,0,0,0.6);
+	color: #00a99d;
+	opacity: 0.6;
 }
 
 .login-bg{
@@ -370,7 +384,7 @@ opacity: 0;
 	bottom: 10px;
 	line-height: 1;
 	font-size:50px;
-	font-family: SFNSUL;
+	font-family: Avenir Light;
 	color: #dbdbdb;
 }
 
@@ -401,29 +415,29 @@ opacity: 0;
 }
 
 ::-webkit-input-placeholder {
-	padding-left: 10px;
-	padding-top: 10px;
+	padding-left: 8px;
+	padding-top: 2px;
 	vertical-align: middle;
-	font-size: 30px;
-	font-family: SFNSUL;
-	color: rgba(255,255,255,0.8);
+	font-size: 25px;
+	font-family: Avenir Light;
+	color: rgba(255,255,255,0.4);
 	text-align: left;
 }
 
 :-moz-placeholder { /* Firefox 18- */
-	font-family: SFNSUL;
+	font-family: Avenir Light;
 	color: rgba(255,255,255,0.4);
 	text-align: center;
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
-	font-family: SFNSUL;
+	font-family: Avenir Light;
 	color: rgba(255,255,255,0.4);
 	text-align: center;
 }
 
 :-ms-input-placeholder {
-	font-family: SFNSUL;
+	font-family: Avenir Light;
 	color: rgba(255,255,255,0.4);
 	text-align: center;
 }
