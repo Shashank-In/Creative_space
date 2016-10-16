@@ -2,6 +2,11 @@
 	font-family: Avenir;
 	src: url(../fonts/avenir-next-regular.ttf);
 }
+@font-face{
+	font-family: Avenir Light;
+	src: url(../fonts/avenir-next-lt.ttf);
+}
+
 *{
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -29,6 +34,9 @@ body{
 	height: 100%;
 	width:100%;
 }
+#pre-desc{
+	font-family: Avenir Light;
+}
 .user-detail div:nth-child(1){
 	margin-top: 40px;
 	margin-left: 8%;
@@ -51,6 +59,7 @@ body{
 	font-size: 2em;
 }
 #user-bio{
+	font-family: Avenir Light;
 	font-size: 1.2em;
 	margin-top: 30px;
 }
@@ -84,7 +93,7 @@ body{
 	position: relative;
 	height: 2vw;
 }
-#user-tools img:nth-child(2){
+#user-tools a:nth-child(2){
 	float: right;
 }
 
@@ -504,28 +513,28 @@ background-color: rgba(26,26,26,.5);
 
 /* Content styles */
 .md-content {
+	border: 0.5px solid white;
 	color: #fff;
-	background:#1a1a1a;
+	background: #1a1a1a;
 	position: relative;
-	border-radius: 5px;
 	margin: 0 auto;
+	padding-bottom: 80px;
 }
 
 .md-content h3 {
+	color: #00a99d;
 	margin: 0;
 	padding: 0.4em;
 	text-align: center;
 	font-size: 2em;
 	font-weight: 100;
-	font-family: Avenir;
+	font-family: Avenir Light;
 	opacity: 0.8;
-	background: rgba(0,0,0,0.1);
 	border-radius: 3px 3px 0 0;
 }
 
 .md-content > .form-cont {
 	padding: 15px 40px 30px;
-	font-weight: 300;
 	font-size: 1.15em;
 }	
 
@@ -563,6 +572,7 @@ background-color: rgba(26,26,26,.5);
 	border: none;
 	background: none;
 	flex: none;
+	cursor: pointer;
 }
 .icon line {
 	stroke: #dbdbdb;
@@ -582,31 +592,40 @@ background-color: rgba(26,26,26,.5);
 
 /* Image Form*/
 
-input,textarea{
-	padding-left:8px;
-	font-family: Avenir;
+input, textarea{
+	padding-left: 8px;
+	font-family: Avenir Light;
 	color: white;
-	background-color: transparent;
-	border: 1px solid white;
+	background-color: rgba(0,0,0,0.1);
+	border: 0.5px solid white;
 }
 
 .form-button{
+	float: right;
+	padding-left: 0;
+	text-align: center;
 	position: relative;
 	opacity: 1;
-	display: block;
+	display: inline-block;
 	font-size: 20px;
-	line-height: 50px;
 	color: white;
-	font-family: Avenir;
-	text-align: center;
+	font-family: Avenir Light;
 	border: 1px solid white;
 	width: 100px;
 	height: 50px;
 	background: transparent;
-	margin: 5px auto;
+	margin: 15px;
+	margin-right: 0;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+.form-button:hover{
+	background-color: rgba(255,255,255,0.1);
 }
 
 #image-title{
+	border: 0.5px solid rgba(255,255,255,0.5);
 	margin: 10px auto;
 	padding: 10px;
 	font-family: Avenir;
@@ -616,7 +635,9 @@ input,textarea{
 }
 
 #image-desc{
-	margin: 10px auto;	
+	border: 0.5px solid rgba(255,255,255,0.5);
+	margin: 10px auto;
+	margin-bottom: 0;
 	padding: 10px;
 	font-family: Avenir;
 	font-size: 1em;
@@ -628,7 +649,7 @@ input,textarea{
 /* video form */
 .vid-th-cont{
 	display: inline-block;
-	border: 1px solid white;
+	border: 0px solid rgba(255,255,255,0.5);
 	height: 200px;
 	width: 200px;
 	overflow: hidden;
@@ -637,6 +658,7 @@ input,textarea{
 	width: 100%;
 }
 #video-title{
+	border: 0.5px solid rgba(255,255,255,0.5);
 	float: right;
 	padding: 10px;
 	font-family: Avenir;
@@ -646,6 +668,7 @@ input,textarea{
 }
 
 #video-desc{
+	border: 0.5px solid rgba(255,255,255,0.5);
 	position: absolute;
 	right: 0;
 	display: block;
@@ -661,7 +684,7 @@ input,textarea{
 /* music form */
 .aud-th-cont{
 	display: inline-block;
-	border: 1px solid white;
+	border: 0.5px solid rgba(255,255,255,0.5);
 	height: 200px;
 	width: 200px;
 	overflow: hidden;
@@ -670,6 +693,7 @@ input,textarea{
 	width: 100%;
 }
 #audio-title{
+	border: 0.5px solid rgba(255,255,255,0.5);
 	float: right;
 	padding: 10px;
 	font-family: Avenir;
@@ -679,6 +703,7 @@ input,textarea{
 }
 
 #audio-desc{
+	border: 0.5px solid rgba(255,255,255,0.5);
 	position: absolute;
 	right: 0;
 	display: block;
@@ -694,6 +719,7 @@ input,textarea{
 /*text form*/ 
 
 #text-title{
+	border: 0.5px solid rgba(255,255,255,0.5);
 	margin: 10px auto;
 	padding: 10px;
 	font-family: Avenir;
@@ -704,7 +730,9 @@ input,textarea{
 
 #text-desc{
 	margin: 10px auto;	
+	border: 0.5px solid rgba(255,255,255,0.5);
 	padding: 10px;
+	margin-bottom: 0;
 	font-family: Avenir;
 	font-size: 1em;
 	height: 300px;
@@ -728,7 +756,6 @@ input,textarea{
 	margin: 0 auto;
     max-width: 80%;
     font-size: 1.25rem;
-    /* 20px */
     text-align: center;
     font-weight: 700;
     text-overflow: ellipsis;
@@ -737,7 +764,7 @@ input,textarea{
     display: block;
     overflow: hidden;
     padding: 0.625rem 1.25rem;
-    /* 10px 20px */
+
 }
 
 .no-js .inputfile + label {
@@ -775,4 +802,37 @@ input,textarea{
 .inputfile.has-focus + label,
 .inputfile + label:hover {
    opacity: 0.5;
+}
+
+.form-cont label{
+	font-family: Avenir Light;
+}
+.form-cont label:hover{
+	color: #00a99d;
+}
+
+::-webkit-input-placeholder {
+	vertical-align: middle;
+	font-size: 20px;
+	font-family: Avenir Light;
+	color: rgba(255,255,255,0.4);
+	text-align: left;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+	font-family: Avenir Light;
+	color: rgba(255,255,255,0.4);
+	text-align: center;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+	font-family: Avenir Light;
+	color: rgba(255,255,255,0.4);
+	text-align: center;
+}
+
+:-ms-input-placeholder {
+	font-family: Avenir Light;
+	color: rgba(255,255,255,0.4);
+	text-align: center;
 }
